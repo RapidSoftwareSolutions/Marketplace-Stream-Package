@@ -1,0 +1,462 @@
+{
+  "package": "Stream",
+  "tagline": "Stream API",
+  "description": "Create and customize a social newsfeed/activity newsfeed.",
+  "image": "https://logo.clearbit.com/getstream.io",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-Stream-Package",
+  "keywords": [
+    "API",
+    "facebook",
+    "instagram",
+    "media",
+    "newsfeed",
+    "social"
+  ],
+  "accounts": {
+    "domain": "getstream.io",
+    "credentials": [
+      "apiKey",
+      "apiSecret"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "createActivity",
+      "description": "Create any activity on feed",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "String",
+          "info": "User apiKey obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "String",
+          "info": "User apiSecret obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "feedOwnerType",
+          "type": "String",
+          "info": "Type of feed in which the activity will be created. In your app settings, you can add, remove or edit feed groups. Put there feed Name, not feed type. User has type flat, so you must enter 'user'",
+          "required": true
+        },
+        {
+          "name": "feedOwnerId",
+          "type": "String",
+          "info": "ID of feed in which the activity will be created",
+          "required": true
+        },
+        {
+          "name": "activity",
+          "type": "File",
+          "info": "JSON file with activity parameters. There may be many fields required for your application. But there are 3 required fields: actor, verb, object. Actor - who (name), verb - what actor do (like, post, tweet etc), object",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getActivities",
+      "description": "Get activities from feed with offset and limit",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "String",
+          "info": "User apiKey obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "String",
+          "info": "User apiSecret obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "feedOwnerType",
+          "type": "String",
+          "info": "Type of feed which activity will be get",
+          "required": true
+        },
+        {
+          "name": "feedOwnerId",
+          "type": "String",
+          "info": "Id of feed which activity will be get",
+          "required": true
+        },
+        {
+          "name": "limit",
+          "type": "Number",
+          "info": "The amount of activities requested from the APIs. Default: 25",
+          "required": false
+        },
+        {
+          "name": "offset",
+          "type": "Number",
+          "info": "The offset. Default: 0",
+          "required": false
+        },
+        {
+          "name": "id_gte",
+          "type": "String",
+          "info": "Filter the feed on ids greater than or equal to the given value",
+          "required": false
+        },
+        {
+          "name": "id_gt",
+          "type": "String",
+          "info": "Filter the feed on ids greater than the given value",
+          "required": false
+        },
+        {
+          "name": "id_lte",
+          "type": "String",
+          "info": "Filter the feed on ids smaller than or equal to the given value",
+          "required": false
+        },
+        {
+          "name": "id_lt",
+          "type": "String",
+          "info": "Filter the feed on ids smaller than the given value",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "deleteActivity",
+      "description": "Remove activity from feed",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "String",
+          "info": "User apiKey obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "String",
+          "info": "User apiSecret obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "feedOwnerType",
+          "type": "String",
+          "info": "Type of feed which activity will be removed",
+          "required": true
+        },
+        {
+          "name": "feedOwnerId",
+          "type": "String",
+          "info": "Id of feed which activity will be removed",
+          "required": true
+        },
+        {
+          "name": "activityId",
+          "type": "String",
+          "info": "Activity ID, which will be removed",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "createMultipleFollows",
+      "description": "Create multiple follows with one request",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "String",
+          "info": "User apiKey obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "String",
+          "info": "User apiSecret obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "list",
+          "type": "File",
+          "info": "JSON file like [{'source':'user:1','target':'user:2'},{'source':'user:2','target':'user:1'}]. Create two follows. user:1 follows user:2, and user:2 follows user:1. 'user' - feed name, '1' - feed id",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "followFeed",
+      "description": "Follow feed",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "String",
+          "info": "User apiKey obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "String",
+          "info": "User apiSecret obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "feedOwnerType",
+          "type": "String",
+          "info": "Feed Name",
+          "required": true
+        },
+        {
+          "name": "feedOwnerId",
+          "type": "String",
+          "info": "Feed ID",
+          "required": true
+        },
+        {
+          "name": "feedTargetType",
+          "type": "String",
+          "info": "Target feed Name. For which owner will follow",
+          "required": true
+        },
+        {
+          "name": "feedTargetId",
+          "type": "String",
+          "info": "Target feed ID. For which owner will follow",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getFeedFollower",
+      "description": "Get feed follower",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "String",
+          "info": "User apiKey obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "String",
+          "info": "User apiSecret obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "feedOwnerType",
+          "type": "String",
+          "info": "Feed Name",
+          "required": true
+        },
+        {
+          "name": "feedOwnerId",
+          "type": "String",
+          "info": "Feed ID",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "getFeedFollowings",
+      "description": "Get feed followings",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "String",
+          "info": "User apiKey obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "String",
+          "info": "User apiSecret obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "feedOwnerType",
+          "type": "String",
+          "info": "Feed Name",
+          "required": true
+        },
+        {
+          "name": "feedOwnerId",
+          "type": "String",
+          "info": "Feed ID",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "unFollowFeed",
+      "description": "Unfollow feed",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "String",
+          "info": "User apiKey obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "String",
+          "info": "User apiSecret obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "feedOwnerType",
+          "type": "String",
+          "info": "Feed Name",
+          "required": true
+        },
+        {
+          "name": "feedOwnerId",
+          "type": "String",
+          "info": "Feed ID",
+          "required": true
+        },
+        {
+          "name": "feedTargetType",
+          "type": "String",
+          "info": "Target feed Name",
+          "required": true
+        },
+        {
+          "name": "feedTargetId",
+          "type": "String",
+          "info": "Target feed ID",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "addActivityToFeeds",
+      "description": "Unfollow feed",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "String",
+          "info": "User apiKey obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "apiSecret",
+          "type": "String",
+          "info": "User apiSecret obtained from getstream.io",
+          "required": true
+        },
+        {
+          "name": "feedOwnerType",
+          "type": "String",
+          "info": "Feed Name",
+          "required": true
+        },
+        {
+          "name": "feedOwnerId",
+          "type": "String",
+          "info": "Feed ID",
+          "required": true
+        },
+        {
+          "name": "feedList",
+          "type": "Array",
+          "info": "Comma-separated feeds. Example: ['user:1', 'user:2']. 'user' - feed Name, '1' - feed ID",
+          "required": true
+        },
+        {
+          "name": "activity",
+          "type": "File",
+          "info": "JSON file with activity parameters. There may be many fields required for your application. But there age 3 required fields: actor, verb, object. Actor - who (name), verb - what actor do (like, post, tweet etc), object",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}

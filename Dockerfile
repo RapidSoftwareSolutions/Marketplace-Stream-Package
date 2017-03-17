@@ -11,7 +11,7 @@ COPY /conf/run.sh /usr/local/bin/run.sh
 COPY . .
 
 RUN echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-    apk --update add --no-cache \
+    apk --no-cache add \
         curl \
         git \
         nginx \

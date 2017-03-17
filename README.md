@@ -99,14 +99,12 @@ Unfollow feed
 | feedTargetId  | String| Target feed ID
 
 ## Stream.addActivityToFeeds
-Unfollow feed
+Add one activity to many feed
 
 | Field        | Type  | Description
 |--------------|-------|----------
 | apiKey       | String| User apiKey obtained from getstream.io
 | apiSecret    | String| User apiSecret obtained from getstream.io
-| feedOwnerType| String| Feed Name
-| feedOwnerId  | String| Feed ID
-| feedList     | Array | Comma-separated feeds. Example: ['user:1', 'user:2']. 'user' - feed Name, '1' - feed ID
+| feedList     | Array | Comma-separated feeds. Example: ['user:1', 'notification:1']. 'user' - feed Name, '1' - feed ID
 | activity     | File  | JSON file with activity parameters. There may be many fields required for your application. But there age 3 required fields: actor, verb, object. Actor - who (name), verb - what actor do (like, post, tweet etc), object
 

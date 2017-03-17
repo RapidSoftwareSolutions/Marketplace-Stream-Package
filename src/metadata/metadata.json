@@ -408,7 +408,7 @@
     },
     {
       "name": "addActivityToFeeds",
-      "description": "Unfollow feed",
+      "description": "Add one activity to many feeds",
       "args": [
         {
           "name": "apiKey",
@@ -420,18 +420,6 @@
           "name": "apiSecret",
           "type": "String",
           "info": "User apiSecret obtained from getstream.io",
-          "required": true
-        },
-        {
-          "name": "feedOwnerType",
-          "type": "String",
-          "info": "Feed Name",
-          "required": true
-        },
-        {
-          "name": "feedOwnerId",
-          "type": "String",
-          "info": "Feed ID",
           "required": true
         },
         {

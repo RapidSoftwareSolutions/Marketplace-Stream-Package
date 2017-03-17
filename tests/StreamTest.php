@@ -7,6 +7,7 @@ class GeoRankerTest extends BaseTestCase
 {
     /**
      * @dataProvider dataProvider
+     * @param $url
      */
     public function testRoutes($url) {
         $response = $this->runApp("POST", '/api/Stream/'.$url);
@@ -24,6 +25,7 @@ class GeoRankerTest extends BaseTestCase
             ['getFeedFollower'],
             ['getFeedFollowings'],
             ['createMultipleFollows'],
+            ['addActivityToFeeds'],
             ['addActivityToFeeds']
         ];
     }

@@ -25,7 +25,6 @@ class GeoRankerTest extends BaseTestCase
             ['getFeedFollower'],
             ['getFeedFollowings'],
             ['createMultipleFollows'],
-            ['addActivityToFeeds'],
             ['addActivityToFeeds']
         ];
     }

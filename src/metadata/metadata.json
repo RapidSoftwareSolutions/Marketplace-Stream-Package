@@ -174,7 +174,7 @@
           "name": "activityId",
           "type": "String",
           "info": "Activity ID, which will be removed",
-          "required": false
+          "required": true
         }
       ],
       "callbacks": [

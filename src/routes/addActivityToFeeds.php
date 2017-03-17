@@ -17,11 +17,19 @@ $app->post('/api/Stream/addActivityToFeeds', function ($request, $response) {
     $data = str_replace('\"', '"', $data);
     $activityJson = json_decode($data, true);
 
+    if (!is_array($postData['args']['feedList'])) {
+        $data = str_replace('\"', '"', $toJson->normalizeJson($postData['args']['feedList']));
+        $feedList = json_decode($data, true);
+    }
+    else {
+        $feedList = $postData['args']['feedList'];
+    }
+
     try {
         $client = new GetStream\Stream\Client($postData['args']['apiKey'], $postData['args']['apiSecret']);
         $batcher = $client->batcher();
 
-        $responseFromVendor = $batcher->addToMany($activityJson, $postData['args']['feedList']);
+        $responseFromVendor = $batcher->addToMany($activityJson, $feedList);
         $result['callback'] = 'success';
         $result['contextWrites']['to'] = $responseFromVendor;
     } catch (\GuzzleHttp\Exception\BadResponseException $exception) {

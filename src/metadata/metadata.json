@@ -13,7 +13,7 @@
     "social"
   ],
   "accounts": {
-    "domain": "http://getstream.io",
+    "domain": "getstream.io",
     "credentials": [
       "apiKey",
       "apiSecret"

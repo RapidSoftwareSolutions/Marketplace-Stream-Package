@@ -1,7 +1,7 @@
 [![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Stream/functions?utm_source=RapidAPIGitHub_StreamFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
 # Stream Package
 Create and customize a social newsfeed/activity newsfeed.
-* Domain: getstream.io
+* Domain: http://getstream.io
 * Credentials: apiKey, apiSecret
 
 ## How to get credentials: 

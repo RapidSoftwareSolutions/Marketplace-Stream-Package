@@ -26,13 +26,13 @@
       "args": [
         {
           "name": "apiKey",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiKey obtained from getstream.io",
           "required": true
         },
         {
           "name": "apiSecret",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiSecret obtained from getstream.io",
           "required": true
         },
@@ -72,13 +72,13 @@
       "args": [
         {
           "name": "apiKey",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiKey obtained from getstream.io",
           "required": true
         },
         {
           "name": "apiSecret",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiSecret obtained from getstream.io",
           "required": true
         },
@@ -148,13 +148,13 @@
       "args": [
         {
           "name": "apiKey",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiKey obtained from getstream.io",
           "required": true
         },
         {
           "name": "apiSecret",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiSecret obtained from getstream.io",
           "required": true
         },
@@ -194,13 +194,13 @@
       "args": [
         {
           "name": "apiKey",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiKey obtained from getstream.io",
           "required": true
         },
         {
           "name": "apiSecret",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiSecret obtained from getstream.io",
           "required": true
         },
@@ -228,13 +228,13 @@
       "args": [
         {
           "name": "apiKey",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiKey obtained from getstream.io",
           "required": true
         },
         {
           "name": "apiSecret",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiSecret obtained from getstream.io",
           "required": true
         },
@@ -280,13 +280,13 @@
       "args": [
         {
           "name": "apiKey",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiKey obtained from getstream.io",
           "required": true
         },
         {
           "name": "apiSecret",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiSecret obtained from getstream.io",
           "required": true
         },
@@ -320,13 +320,13 @@
       "args": [
         {
           "name": "apiKey",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiKey obtained from getstream.io",
           "required": true
         },
         {
           "name": "apiSecret",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiSecret obtained from getstream.io",
           "required": true
         },
@@ -360,13 +360,13 @@
       "args": [
         {
           "name": "apiKey",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiKey obtained from getstream.io",
           "required": true
         },
         {
           "name": "apiSecret",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiSecret obtained from getstream.io",
           "required": true
         },
@@ -412,13 +412,13 @@
       "args": [
         {
           "name": "apiKey",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiKey obtained from getstream.io",
           "required": true
         },
         {
           "name": "apiSecret",
-          "type": "String",
+          "type": "credentials",
           "info": "User apiSecret obtained from getstream.io",
           "required": true
         },

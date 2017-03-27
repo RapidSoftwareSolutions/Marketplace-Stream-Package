@@ -5,7 +5,7 @@ Create and customize a social newsfeed/activity newsfeed.
 * Credentials: apiKey, apiSecret
 
 ## How to get credentials: 
-1. Get apiKey and apiSecret from https://www.getstream.io 
+1. Get apiKey and apiSecret from [Stream](https://www.getstream.io) 
  
 ## Stream.createActivity
 Create any activity on feed

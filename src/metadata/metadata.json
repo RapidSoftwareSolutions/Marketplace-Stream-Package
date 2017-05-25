@@ -107,25 +107,25 @@
           "required": false
         },
         {
-          "name": "id_gte",
+          "name": "idGte",
           "type": "String",
           "info": "Filter the feed on ids greater than or equal to the given value",
           "required": false
         },
         {
-          "name": "id_gt",
+          "name": "idGt",
           "type": "String",
           "info": "Filter the feed on ids greater than the given value",
           "required": false
         },
         {
-          "name": "id_lte",
+          "name": "idLte",
           "type": "String",
           "info": "Filter the feed on ids smaller than or equal to the given value",
           "required": false
         },
         {
-          "name": "id_lt",
+          "name": "idLt",
           "type": "String",
           "info": "Filter the feed on ids smaller than the given value",
           "required": false
@@ -206,9 +206,21 @@
         },
         {
           "name": "list",
-          "type": "File",
-          "info": "JSON file like [{'source':'user:1','target':'user:2'},{'source':'user:2','target':'user:1'}]. Create two follows. user:1 follows user:2, and user:2 follows user:1. 'user' - feed name, '1' - feed id",
-          "required": true
+          "type": "Array",
+          "info": "Create many follows",
+          "required": true,
+          "structure": [
+            {
+              "name": "source",
+              "type": "String",
+              "info": "Source"
+            },
+            {
+              "name": "target",
+              "type": "String",
+              "info": "Target"
+            }
+          ]
         }
       ],
       "callbacks": [
@@ -425,8 +437,13 @@
         {
           "name": "feedList",
           "type": "Array",
-          "info": "Comma-separated feeds. Example: ['user:1', 'user:2']. 'user' - feed Name, '1' - feed ID",
-          "required": true
+          "info": "Feeds",
+          "required": true,
+          "structure": {
+            "name": "feed",
+            "type": "String",
+            "info": "Feed ID"
+          }
         },
         {
           "name": "activity",

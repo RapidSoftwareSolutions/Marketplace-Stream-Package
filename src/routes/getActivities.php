@@ -12,15 +12,23 @@ $app->post('/api/Stream/getActivities', function ($request, $response) {
         $postData = $validateRes;
     }
 
-    if (!empty($postData['args']['options'])) {
-        $activityOptions = $postData['args']['options'];
-    }
-    else {
-        $activityOptions = [];
-    }
-
     $offset = 0;
     $limit = 20;
+
+    $activityOptions = [];
+
+    if (isset($postData['args']['idGte']) && strlen($postData['args']['idGte']) > 0) {
+        $activityOptions['id_gte'] = $postData['args']['idGte'];
+    }
+    if (isset($postData['args']['idGt']) && strlen($postData['args']['idGt']) > 0) {
+        $activityOptions['id_gt'] = $postData['args']['idGt'];
+    }
+    if (isset($postData['args']['idLte']) && strlen($postData['args']['idLte']) > 0) {
+        $activityOptions['id_lte'] = $postData['args']['idLte'];
+    }
+    if (isset($postData['args']['idLt']) && strlen($postData['args']['idLt']) > 0) {
+        $activityOptions['id_lt'] = $postData['args']['id_lt'];
+    }
 
     if (isset($postData['args']['offset']) && (int)$postData['args']['offset'] > 0) {
         $offset = (int)$postData['args']['offset'];

@@ -17,12 +17,11 @@ $app->post('/api/Stream/addActivityToFeeds', function ($request, $response) {
     $data = str_replace('\"', '"', $data);
     $activityJson = json_decode($data, true);
 
-    if (!is_array($postData['args']['feedList'])) {
-        $data = str_replace('\"', '"', $toJson->normalizeJson($postData['args']['feedList']));
-        $feedList = json_decode($data, true);
+    if (is_array($postData['args']['feedList'])) {
+        $feedList = $postData['args']['feedList'];
     }
     else {
-        $feedList = $postData['args']['feedList'];
+        $feedList = explode(',', $postData['args']['feedList']);
     }
 
     try {

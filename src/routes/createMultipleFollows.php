@@ -12,15 +12,10 @@ $app->post('/api/Stream/createMultipleFollows', function ($request, $response) {
         $postData = $validateRes;
     }
 
-    $toJson = new \Models\normilizeJson();
-    $data = $toJson->normalizeJson(file_get_contents($postData['args']['list']));
-    $data = str_replace('\"', '"', $data);
-    $json = json_decode($data, true);
-
     try {
         $client = new GetStream\Stream\Client($postData['args']['apiKey'], $postData['args']['apiSecret']);
         $batcher = $client->batcher();
-        $responseFromVendor = $batcher->followMany($json);
+        $responseFromVendor = $batcher->followMany($postData['args']['list']);
         $result['callback'] = 'success';
         $result['contextWrites']['to'] = $responseFromVendor;
     } catch (\GuzzleHttp\Exception\BadResponseException $exception) {

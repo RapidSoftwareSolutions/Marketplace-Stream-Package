@@ -436,7 +436,7 @@
         },
         {
           "name": "feedList",
-          "type": "Array",
+          "type": "List",
           "info": "Feeds",
           "required": true,
           "structure": {

@@ -27,7 +27,7 @@ $app->post('/api/Stream/createMultipleFollows', function ($request, $response) {
         try {
             $client = new GetStream\Stream\Client($postData['args']['apiKey'], $postData['args']['apiSecret']);
             $batcher = $client->batcher();
-            $responseFromVendor = $batcher->followMany($postData['args']['list']);
+            $responseFromVendor = $batcher->followMany($data);
             $result['callback'] = 'success';
             $result['contextWrites']['to'] = $responseFromVendor;
         } catch (\GuzzleHttp\Exception\BadResponseException $exception) {

@@ -105,6 +105,6 @@ Add one activity to many feed
 |--------------|-------|----------
 | apiKey       | credentials| User apiKey obtained from getstream.io
 | apiSecret    | credentials| User apiSecret obtained from getstream.io
-| feedList     | Array | List of  feeds.
+| feedList     | List | List of feeds. Array of strings
 | activity     | File  | JSON file with activity parameters. There may be many fields required for your application. But there age 3 required fields: actor, verb, object. Actor - who (name), verb - what actor do (like, post, tweet etc), object
 

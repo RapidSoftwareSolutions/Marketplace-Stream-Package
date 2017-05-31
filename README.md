@@ -64,7 +64,7 @@ Create multiple follows with one request
 |----------|-------|----------
 | apiKey   | credentials| User apiKey obtained from getstream.io
 | apiSecret| credentials| User apiSecret obtained from getstream.io
-| list     | Array  | Create many follows.
+| list     | Array  | Create many follows. Example [{"sourse": "value1", "target": "value2"}, {}]
 
 ## Stream.getFeedFollower
 Get feed follower

@@ -19,6 +19,10 @@
       "apiSecret"
     ]
   },
+  "steps": [
+    "Login or signup for a Stream account (https://www.getstream.io/)",
+    "Navigate to your account dashboard (https://getstream.io/dashboard/) to find your ApiKey and ApiSecret"
+  ],
   "blocks": [
     {
       "name": "createActivity",

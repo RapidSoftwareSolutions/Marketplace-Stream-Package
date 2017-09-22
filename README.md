@@ -5,7 +5,8 @@ Create and customize a social newsfeed/activity newsfeed.
 * Credentials: apiKey, apiSecret
 
 ## How to get credentials: 
-1. Get apiKey and apiSecret from [Stream](https://www.getstream.io) 
+1. Login or signup for a [Stream](https://www.getstream.io) account
+2. Navigate to your [account dashboard](https://getstream.io/dashboard/) to find your ApiKey and ApiSecret
  
 
  
